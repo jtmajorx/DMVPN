@@ -7,6 +7,7 @@ from netmiko import ConnectHandler
 # Creditials
 username = input('Username: ')
 password = getpass.getpass('Password: ')
+ikepsk = input('IKE Pre-shared-key: ')
 
 # Define Nodes
 script, csv_file = argv
@@ -23,7 +24,7 @@ for devices in all_spokes:
     devices['password'] = password
     net_connect = ConnectHandler(**devices)
     config_commands = ['crypto keyring DMVPN vrf WAN1',
-    'pre-shared-key address 0.0.0.0 key cad2334edz1',
+    'pre-shared-key address 0.0.0.0 key %s' %ikepsk,
     'crypto isakmp policy 10',
     'authentication pre-share',
     'encryption aes 256',
