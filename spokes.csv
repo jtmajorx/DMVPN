@@ -1,4 +1,0 @@
-host,device_type,ip
-Spoke_1,cisco_ios_ssh,192.168.122.101
-Spoke_2,cisco_ios_ssh,192.168.122.102
-Spoke_3,cisco_ios_ssh,192.168.122.103
