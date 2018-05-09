@@ -38,7 +38,7 @@ for devices in all_spokes:
     'set transform-set ESP-AES256-SHA2',
     'set pfs group14']
     output = net_connect.send_config_set(config_commands)
-    print(output)
+    #print(output)
 
 # Configure Loopbacks
 c = 101
@@ -49,7 +49,7 @@ for devices in all_spokes:
     config_commands = ['interface loopback0',
     'ip address 10.99.99.' + str(c)+ ' 255.255.255.255']
     output = net_connect.send_config_set(config_commands)
-    print(output)
+    #print(output)
     c = c + 1
 
 # Configure Spoke Tunnels - IP starting at 10 and incrementing by 1
@@ -70,7 +70,7 @@ for devices in all_spokes:
     'tunnel vrf WAN1',
     'tunnel protection ipsec profile DMVPN_ipsec']
     output = net_connect.send_config_set(config_commands)
-    print(output)
+    #print(output)
     a = a + 1
 
 # EIGRP Configurations
@@ -83,4 +83,5 @@ for devices in all_spokes:
     'network 10.0.0.0',
     'eigrp stub']
     output = net_connect.send_config_set(config_commands)
-    print(output)
+    #print(output)
+print ('DMVPN Spokes Configured')
