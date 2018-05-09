@@ -1,0 +1,3 @@
+host,device_type,ip
+Hub_1,cisco_ios_ssh,192.168.122.11
+Hub_2,cisco_ios_ssh,192.168.122.12
